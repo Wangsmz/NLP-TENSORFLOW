@@ -12,7 +12,7 @@ for sample in samples:
             token_index[word] = len(token_index)
 
 #设定句子的最大长度
-max_length = 5
+max_length = 8
 #初始化
 results = np.zeros(shape=(len(samples),max_length,max(token_index.values())+1))
 
@@ -21,8 +21,8 @@ for i,sample in enumerate(samples):
     for j,word in list(enumerate(sample.split()))[:max_length]:
             index = token_index.get(word)
             results[i,j,index] = 1
-        
 
+print(results)
 
 
 
