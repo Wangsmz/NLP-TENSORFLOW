@@ -41,7 +41,7 @@ x_val = x_train[:1000]
 partial_x_train = x_train[1000:]
 y_val = one_hot_train_labels[:1000]
 partial_y_train = one_hot_train_labels[1000:]
-history = model.fit(partial_x_train, partial_y_train, epochs=30, batch_size=512, validation_data=(x_val,y_val),callbacks=all_callbacks.callbacks)
+history = model.fit(partial_x_train, partial_y_train, epochs=30, batch_size=512, validation_data=(x_val,y_val))
 training_and_validation_loss(history.history)
 end_time = end_time()
 delay = end_time - start_time
