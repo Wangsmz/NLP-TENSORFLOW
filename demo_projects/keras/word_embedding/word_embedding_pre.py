@@ -38,6 +38,7 @@ embedding_matrix = np.zeros((max_words, embedding_dim))
 for word, i in word_index.items():
     if i < max_words:
         embedding_vector = embeddings_index.get(word)
+        #上面返回词向量的操作意味着embeddings_index中没有的词就返回0向量了
         if embedding_vector is not None:
             embedding_matrix[i] = embedding_vector
 
