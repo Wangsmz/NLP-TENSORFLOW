@@ -15,7 +15,6 @@ class IteratorClass:
     #__getitem__使类具有迭代器功能。下面使用它实现读取文件的功能
     def __getitem__(self, index):
         line = self.fileobject.readline()
-
         if line == "":
             self.fileobject.close()
             raise IndexError
