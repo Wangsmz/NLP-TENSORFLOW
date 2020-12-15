@@ -8,6 +8,7 @@ from utility.timer import start_time,end_time
 from keras.utils.np_utils import to_categorical
 import numpy as np
 from utility import all_callbacks
+import time
 start_time = start_time()
 (train_data, train_labels), (test_data, test_labels) = reuters.load_data(num_words=10000)
 word_index = reuters.get_word_index()
@@ -51,3 +52,9 @@ print("总耗时：",delay,"秒")
 predictions = model.predict(x_test)
 #一共有46类，每一个样本的预测向量维度一定是46。总和一定为1。所属类别属于概率最大的那个
 print(predictions[0].shape, np.sum(predictions[0]),np.argmax(predictions[0]))
+
+#保存模型文件
+import os
+current_file = str(os.path.basename(__file__)).split(".")[0]
+model_path = "../models/"+str(time.strftime("%Y.%m.%d-%H.%M.%S"))+current_file+".h5"
+model.save(model_path)
