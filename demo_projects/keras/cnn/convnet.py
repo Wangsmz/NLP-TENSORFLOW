@@ -5,6 +5,7 @@ from keras.datasets import mnist
 from keras.utils import to_categorical
 from utility import all_callbacks
 from keras.utils import plot_model
+import time
 #python3中plot_model需要pydot-ng模块的支持，请事先install
 
 (train_images,train_labels),(test_images,test_labels) = mnist.load_data()
@@ -29,4 +30,9 @@ model.compile(optimizer='rmsprop',loss='categorical_crossentropy',metrics=['accu
 model.fit(train_images, train_labels, epochs=1, batch_size=64,)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(test_acc)
-plot_model(model,to_file='..\\records\\model_png\\convnet.png',show_shapes=True)
+
+#保存模型文件
+import os
+current_file = str(os.path.basename(__file__)).split(".")[0]
+model_path = "../models/"+str(time.strftime("%Y.%m.%d-%H.%M.%S"))+current_file+".h5"
+model.save(model_path)

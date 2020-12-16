@@ -11,3 +11,5 @@ x_data = vectorization(test_data,10000)
 predictions = model.predict(x_data)
 
 print(predictions[0].shape, np.sum(predictions[0]),np.argmax(predictions[0]))
+#--------------------------------------------------------------------------------------------
+
