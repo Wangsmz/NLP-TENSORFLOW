@@ -61,7 +61,7 @@ model_path = "../models/"+str(time.strftime("%Y.%m.%d-%H.%M.%S"))+current_file+"
 #--------------------------------------------------------
 #保存为onnx
 import keras2onnx
-from utility.to_onnx import convert_to_onnx
-convert_to_onnx(model)
+from utility.to_onnx import converted_to_onnx
+converted_to_onnx(model,"keras","classification_1")
 #保存为h5格式
 model.save(model_path)
