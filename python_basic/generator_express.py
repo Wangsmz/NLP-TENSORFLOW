@@ -9,6 +9,7 @@ print(a)
 #生成器表达式
 b = (i for i in range(10))
 print(b)
+print(list(b))
 #output:<generator object <genexpr> at 0x000001B4152AE990>
 
 

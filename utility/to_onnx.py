@@ -17,14 +17,21 @@ import re
 2.4 metadata_props,map<string,string>:named metadata values,keys should be distinct
     以键值的形式添加元数据，key唯一
 """
-
-def converted_to_onnx(model,skeleton,name):
-    pass
-
+#directory是你要保存onnx文件的目录，以"/"结尾
+def converted_to_onnx(model,skeleton,name,directory):
+    onnx_model = keras2onnx.convert_keras(model,model.name)
+    meta = onnx_model.metadata_props.add()
+    meta.key = "author"
+    meta.value = "wmingzhu"
+    meta = onnx_model.metadata_props.add()
+    meta.key = "date"
+    meta.value = str(time.strftime("%Y.%m.%d-%H.%M.%S"))
+    onnx_model.doc_string = "测试使用"
+    onnx.save_model(onnx_model, directory + skeleton + "-" + name + ".onnx")    
 #此时要引入加载模型的模块
 from keras.models import load_model
 
-def converted_to_onnx_from_file(filepath,skeleton,name):
+def converted_to_onnx_from_file(filepath,skeleton,name,directory):
     origin_model = load_model(filepath)
     onnx_model = keras2onnx.convert_keras(origin_model,origin_model.name)
     meta = onnx_model.metadata_props.add()
@@ -34,10 +41,19 @@ def converted_to_onnx_from_file(filepath,skeleton,name):
     meta.key = "date"
     meta.value = str(time.strftime("%Y.%m.%d-%H.%M.%S"))
     onnx_model.doc_string = "测试使用"
-    #onnx.save_model(onnx_model,"../onnx_files/"+skeleton+"-"+name+".onnx")
-    #C://Users/15216/Desktop\deeplearing/
-    # abspath = os.path.abspath("../onnx_files/")
-    # abspath = re.sub("\\\\", "/", abspath)
-    onnx.save_model(onnx_model,"C:/Users/15216/Desktop/deeplearing/onnx_files/"+skeleton+"-"+name+".onnx")
+    onnx.save_model(onnx_model,directory+skeleton+"-"+name+".onnx")
 
-
+#下面是将序列化过的模型写入文件，作为onnx自带的save_model函数的备选项
+def save_onnx_model(filepath,skeleton,name,directory):
+    origin_model = load_model(filepath)
+    onnx_model = keras2onnx.convert_keras(origin_model,origin_model.name)
+    meta = onnx_model.metadata_props.add()
+    meta.key = "author"
+    meta.value = "wmingzhu"
+    meta = onnx_model.metadata_props.add()
+    meta.key = "date"
+    meta.value = str(time.strftime("%Y.%m.%d-%H.%M.%S"))
+    onnx_model.doc_string = "测试使用"
+    serialized = onnx_model.SerializeToString()
+    with open(directory+skeleton+"-"+name+".onnx","wb") as f:
+        f.write(serialized)

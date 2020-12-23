@@ -14,7 +14,7 @@ print(next(generator()))
 #也可以这样
 for i in generator():
     print(i)
-
+print(list(generator()))
 print(5 in generator())
 """
 上面的输出表明生成器函数其实就是一个可迭代对象，或者叫迭代器，迭代的那个地点就在yield关键字处，每运行到

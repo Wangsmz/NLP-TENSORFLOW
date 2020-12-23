@@ -1,7 +1,4 @@
-
-import os
-print(os.listdir("demo_projects/keras/models/"))
-print(os.path.abspath(__file__))
-entire = os.path.abspath(__file__)
-direc,filename = os.path.split(entire)
-print(direc)
+import cv2
+cap = cv2.VideoCapture("C:/Users/15216/Desktop/script_in_docker/video_origin/55.mp4")
+num = cap.get(7)
+print(num)

@@ -12,5 +12,7 @@
 #
 # print(predictions[0].shape, np.sum(predictions[0]),np.argmax(predictions[0]))
 #--------------------------------------------------------------------------------------------
-from utility.to_onnx import converted_to_onnx_from_file
-converted_to_onnx_from_file("models/2020.12.16-16.09.35keras_classification_2.h5","keras","classification_2")
+from utility.to_onnx import converted_to_onnx_from_file,save_onnx_model
+# converted_to_onnx_from_file("models/2020.12.16-16.09.35keras_classification_2.h5","keras","classification_2")
+# save_onnx_model("models/2020.12.16-16.09.35keras_classification_2.h5","keras","classification_2","../../onnx_files/")
+converted_to_onnx_from_file("models/2020.12.16-16.09.35keras_classification_2.h5","keras","classification_2","../../onnx_files/")

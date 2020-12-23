@@ -28,7 +28,7 @@ print(model.name)
 #--------------------------------------------------
 #保存为onnx
 from utility.to_onnx import converted_to_onnx
-converted_to_onnx(model,"keras","classification_2")
+converted_to_onnx(model,"keras","classification_2.1","../../../onnx_files/")
 #保存模型文件
 import os
 current_file = str(os.path.basename(__file__)).split(".")[0]
