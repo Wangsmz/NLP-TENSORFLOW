@@ -6,7 +6,7 @@
 
 import keras
 
-tensorboard = [keras.callbacks.TensorBoard(log_dir='..\\records\\tensorboard',histogram_freq=1,         embeddings_freq=1,)]
+tensorboard = [keras.callbacks.TensorBoard(log_dir='..\\records\\tensorboard',histogram_freq=1, write_grads=True)]
 
 #如果在n轮过后monitor指标依然没改善那就停止训练
 early_stopping = [keras.callbacks.EarlyStopping(monitor='acc',patience=1)]
