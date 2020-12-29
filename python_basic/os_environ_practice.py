@@ -27,7 +27,6 @@ os.environ[‘SHELL’]:使用shell的类型。
 os.environ[‘LAN’]:使用的语言。
 
 os.environ[‘SSH_AUTH_SOCK‘]:ssh的执行路径。
-
 """
 import os
 #查看environ得key
