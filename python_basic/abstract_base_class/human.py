@@ -45,7 +45,7 @@ class Person1(Human):
     def getName(self):
         return self.name
 
-    def getGender(self):
+    def getGender(self,data):
         return self.gender
 
 person1 = Person1("Jack","male")
