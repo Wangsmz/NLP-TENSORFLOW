@@ -4,7 +4,7 @@
 自动调用，以便对属于该类的对象的某种请求做出响应。
 """
 class IteratorClass:
-
+    #init也是一个特殊方法属性
     def __init__(self,filepath):
         self.fileobject = open(filepath,'r',encoding='utf-8')
 
