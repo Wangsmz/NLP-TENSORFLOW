@@ -1,6 +1,7 @@
 """
 1.python获得一些有关系统的各种信息
 2.environ是一个字符串所对应环境的映像对象,例如linux下environ[‘HOME’]就代表了当前这个用户的主目录。
+
 3.罗列一些key
 windows：
 
@@ -41,4 +42,5 @@ os.environ["PATH"] += "D:\\ENVS"
 """
 通过export PATH=$PATH:/NewDir可以临时设置系统环境变量，如果要长久生效，必须将export语句放置在/etc/profile文件或者~/.bashrc文件中
 """
-
+os.environ['XQUERY_ADDR'] = "http://"
+print(os.environ.get('XQUERY_ADDR'))
