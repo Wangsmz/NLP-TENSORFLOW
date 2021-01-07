@@ -10,8 +10,14 @@ import time
 
 (train_images,train_labels),(test_images,test_labels) = mnist.load_data()
 print(train_images.shape)
+print(train_images[1].shape)
 train_images = train_images.reshape((60000, 28, 28, 1))
+print(train_images.shape)
+print(train_images[1].shape)
 train_images = train_images.astype('float32') / 255
+print(train_images[1].shape)
+print(train_images[1])
+
 test_images = test_images.reshape((10000, 28, 28, 1))
 test_images = test_images.astype('float32') / 255
 train_labels = to_categorical(train_labels)
@@ -31,6 +37,7 @@ model.fit(train_images, train_labels, epochs=1, batch_size=64,)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(test_acc)
 
+print(model.predict(train_images[:1]))
 #保存模型文件
 import os
 current_file = str(os.path.basename(__file__)).split(".")[0]
