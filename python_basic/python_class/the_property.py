@@ -1,6 +1,5 @@
 """
-在类的使用过程中出于一些考虑，你不想直接把变量暴露出去，所以你可以为该变量设置get和set方法，但是python有更简单的方法，
-就是用点访问一个属性，感觉就像直接使用一个变量一样简单，而且又保证了背后有一个处理过程，不想直接使用变量读取或赋值那么轻率
+在类的使用过程中出于一些考虑，你不想直接把变量暴露出去，所以你可以为该变量设置get和set方法，但是python有更简单的方法，就是用点访问一个属性，感觉就像直接使用一个变量一样简单，而且又保证了背后有一个处理过程，不想直接使用变量取或赋值那么轻率
 """
 class Student(object):
 
@@ -18,7 +17,8 @@ class Student(object):
         if value > 100:
             self._score = 100
             return
-        self._score = value
+        else:
+            self._score = value
 
     @property
     def age(self):

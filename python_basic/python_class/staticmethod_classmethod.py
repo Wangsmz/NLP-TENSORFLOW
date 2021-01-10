@@ -24,7 +24,6 @@ class Circle:
 
     @classmethod
     def total_area2(cls):
-        #这个cls是类而不是具体的对象
         total = 0
         for c in cls.circles:
             total += c.area()

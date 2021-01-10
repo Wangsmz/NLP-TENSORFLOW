@@ -24,6 +24,7 @@ test_labels = to_categorical(test_labels)
 history = model.fit(train_images, train_labels, epochs=1, batch_size=128)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(model.name)
+print(test_acc,test_loss)
 
 #--------------------------------------------------
 #保存为onnx

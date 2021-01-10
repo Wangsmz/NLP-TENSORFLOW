@@ -4,8 +4,10 @@
 a = [i for i in range(10)]
 print(a)
 #output:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-
+#字典推导
+s = "abcdef"
+dictionary = {s[i]:i for i in range(6)}
+print(dictionary)
 #生成器表达式
 b = (i for i in range(10))
 print(b)
