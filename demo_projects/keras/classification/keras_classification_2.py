@@ -5,7 +5,7 @@ from keras.utils import to_categorical
 from utility.graphic import training_and_validation_loss
 import time
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
-
+print(train_images.shape,train_images[0])
 model = models.Sequential()
 
 model.add(layers.Dense(512, activation='relu', input_shape=(28 * 28,)))
