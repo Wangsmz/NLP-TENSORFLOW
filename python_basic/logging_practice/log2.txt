@@ -1,12 +1,1 @@
-2021-01-04 14:38:21,679 - __main__ - INFO - Start print log
-2021-01-04 14:38:21,680 - __main__ - WARNING - Something maybe fail.
-2021-01-04 14:38:21,680 - __main__ - INFO - Finish
-2021-01-04 14:38:31,944 - __main__ - INFO - Start print log
-2021-01-04 14:38:31,944 - __main__ - WARNING - Something maybe fail.
-2021-01-04 14:38:31,944 - __main__ - INFO - Finish
-2021-01-04 14:39:59,789 - __main__ - INFO - Start print log
-2021-01-04 14:39:59,790 - __main__ - WARNING - Something maybe fail.
-2021-01-04 14:39:59,790 - __main__ - INFO - Finish
-2021-01-04 14:40:09,296 - __main__ - INFO - Start print log
-2021-01-04 14:40:09,296 - __main__ - WARNING - Something maybe fail.
-2021-01-04 14:40:09,296 - __main__ - INFO - Finish
+2021-01-14 11:38:37,890 - __main__ - INFO - Finish

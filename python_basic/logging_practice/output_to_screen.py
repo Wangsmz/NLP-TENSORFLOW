@@ -1,5 +1,8 @@
 import logging
+"""
+日志级别大小关系为：CRITICAL > ERROR > WARNING > INFO > DEBUG > NOTSET;
 
+"""
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 logging.info("Start print log")
