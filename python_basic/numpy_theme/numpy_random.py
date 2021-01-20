@@ -20,3 +20,8 @@ print(np.random.randint(10,size=(3,3)))#默认从0开始
 
 #random.random,生成0-1的随机浮点数
 print(np.random.random((100,32)))
+
+#shuffle
+a = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15]])
+np.random.shuffle(a)
+print(a)
