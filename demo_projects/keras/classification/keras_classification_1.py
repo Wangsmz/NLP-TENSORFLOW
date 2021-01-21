@@ -11,6 +11,7 @@ from utility import all_callbacks
 import time
 start_time = start_time()
 (train_data, train_labels), (test_data, test_labels) = reuters.load_data(num_words=10000)
+print(train_labels[np.argmin(train_labels)])
 word_index = reuters.get_word_index()
 """part of word_index output:
       {'mdbl': 10996, 'fawc': 16260, 'degussa': 12089, 'woods': 8803, 'hanging': 13796, 'localized': 20672}  
