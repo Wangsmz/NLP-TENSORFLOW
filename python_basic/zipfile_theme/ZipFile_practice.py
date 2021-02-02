@@ -3,7 +3,7 @@ import os
 import shutil
 from fnmatch import fnmatch, fnmatchcase
 DL_DIR_PREFIX = "model/model"
-with ZipFile("C:\\Users\\15216\\Desktop\\data\\model.zip",'r') as f:
+with ZipFile("C:\\Users\\15216\\Desktop\\model.zip",'r') as f:
     zips = list(filter(lambda x: x.startswith(DL_DIR_PREFIX), f.namelist()))
     print(zips)
     for element in zips:

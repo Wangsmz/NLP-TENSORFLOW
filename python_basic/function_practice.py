@@ -38,6 +38,29 @@ def minus5(argu):
     argu -= 5
     return argu
 
+#定义组合器
+#先介绍reduce函数
+"""
+reduce() 函数会对参数序列中元素进行累积。
+
+函数将一个数据集合（链表，元组等）中的所有数据进行下列操作：用传给 reduce 中的函数 function（有两个参数）先对集合中的第 1、2 个元素进行操作，得到的结果再与第三个数据用 function 函数运算，最后得到一个结果。
+"""
+from functools import reduce
+def add(x, y) :            # 两数相加
+    return x + y
+sum1 = reduce(add, [1,2,3,4,5])   # 计算列表和：1+2+3+4+5
+sum2 = reduce(lambda x, y: x+y, [1,2,3,4,5])  # 使用 lambda 匿名函数
+print(sum1)
+print(sum2)
+
+#输入一个数，对这个数加一、乘2、减5一次执行
+def composed(*argus):
+    return reduce(lambda f,g:lambda x:f(g(x)),argus)
+composed_func = composed(minus5,mutiply2,add1)
+
+#输入5，结果应该为7，测验
+print(composed_func(5))
+
 
 
 
